@@ -46,7 +46,7 @@ def booking():
         group = request.form['group']
         work = request.form['work']
 
-        booking = reserv(name="name", room="room", time="time", group="group", work="work")
+        booking = reserv(name=name, room=room, time=time, group=group, work=work)
 
         db.session.add(booking)
         db.session.commit()
@@ -67,7 +67,7 @@ def checking():
 
 @app.before_first_request
 def create_database():
-    #db.session.query(booking).delete() #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
+    #db.session.query(reserv).delete() #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
     db.create_all()
     db.session.commit()
 
