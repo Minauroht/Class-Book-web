@@ -29,8 +29,19 @@
 
   
       <div class="container">
-        <h1>준비중입니다</h1>
-      </div>
+        <ul>
+          <h1>준비중입니다.
+            {% for reserv in bookings %}
+          <li>
+            <h2>학번/이름: {{ reserv.name }}</h2>
+            <p>장소: {{ reserv.room }}</p>
+            <p>시간: {{ reserv.time }}</p>
+            <p>단체명: {{ reserv.group }}</p>
+            <p>용무: {{ reserv.work }}</p>
+          </li>
+            {% endfor %}
+          </h1>
+        </ul>
 
 
 

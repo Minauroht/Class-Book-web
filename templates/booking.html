@@ -27,17 +27,16 @@
       </div>
     </nav>
 
-  
       <!-- 예약form -->
-      <form class="container" action="" >
+      <form class="container" action="{{ url_for('booking') }}" method="post" >
         <br>
         <div class="form-group">
-          <label for="exampleFormControlInput1">대표자 학번/이름</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="10203/최오량">
+          <label for="name">대표자 학번/이름</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="10203/최오량">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">예약실</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <label for="room">예약실</label>
+          <select class="form-control" id="room", name="room">
             <option>멀티1실</option>
             <option>멀티2실</option>
             <option>멀티3실</option>
@@ -45,8 +44,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">예약시간</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <label for="time">예약시간</label>
+          <select class="form-control" id="time", name="time">
             <option>중식 시간</option>
             <option>석식 시간</option>
             <option>야간 자율 학습 시간 1차시</option>
@@ -55,12 +54,12 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1">예약 단체명</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="SCIVILL, 2-4반, etc..">
+          <label for="group">예약 단체명</label>
+          <input type="text" class="form-control" id="group" name="group" placeholder="SCIVILL, 2-4반, etc..">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1">예약 사유</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="멘토링, 동아리 회의, 면접, etc...">
+          <label for="work">예약 사유</label>
+          <input type="text" class="form-control" id="work" name="work" placeholder="멘토링, 동아리 회의, 면접, etc...">
           <small id="book-form-small">사유는 간단하게 한줄로 적어주세요</small>
         </div>
         <input class="btn btn-primary" type="submit" value="제출">
