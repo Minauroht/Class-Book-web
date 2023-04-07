@@ -35,6 +35,10 @@ bookings=[]
 def home():
     return render_template('index.html')
 
+@app.route('/main')
+def homemain():
+    return render_template('index.html')
+
 
 @app.route('/booking', methods=['GET', 'POST'])
 def booking():
