@@ -86,7 +86,7 @@ def delete_all_data():
 def start_schedule():
     scheduler = BackgroundScheduler()
 
-    scheduler.add_job(delete_all_data, 'cron', hour=22, minute=58) # 시간 지정 삭제
+    scheduler.add_job(delete_all_data, 'cron', hour=21, minute=30) # 시간 지정 삭제
 
     scheduler.start()
 
