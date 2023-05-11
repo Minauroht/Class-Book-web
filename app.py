@@ -5,6 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -54,11 +56,8 @@ def booking():
 
         db.session.add(booking)
         db.session.commit()
-        # 리뷰를 목록에 추가
         bookings.append({'name': name, 'room': room, 'time': time, 'group': group, 'work': work})
-        # 리뷰 목록 페이지로 리디렉션
         return redirect(url_for('checking'))
-    # 요청 방법이 GET인 경우 검토 양식 렌더링
     return render_template('booking.html')
 
 
@@ -71,9 +70,29 @@ def checking():
 
 @app.before_first_request
 def create_database():
-    #db.session.query(reserv).delete() #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
     db.create_all()
+    #db.session.query(reserv).delete() #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
     db.session.commit()
+    
+def delete_all_data():
+    # Create an application context to avoid flask_sqlalchemy error
+    with app.app_context():
+        all_data = reserv.query.all()
+        for data in all_data:
+            db.session.delete(data)
+        db.session.commit()
+        print("오후 9시 30분 기점 리셋")
+
+def start_schedule():
+    scheduler = BackgroundScheduler()
+
+    scheduler.add_job(delete_all_data, 'cron', hour=22, minute=58) # 시간 지정 삭제
+
+    # 스케줄러 시작하기
+    scheduler.start()
+
+# 스케줄러 시작하기
+start_schedule()
 
 
 if __name__ == "__main__":

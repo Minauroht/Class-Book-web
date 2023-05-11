@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 import os
-import datetime
+from datetime import datetime
 
 app = Flask(__name__)
 db = SQLAlchemy()
