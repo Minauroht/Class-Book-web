@@ -75,7 +75,7 @@ def create_database():
     db.session.commit()
     
 def delete_all_data():
-    # Create an application context to avoid flask_sqlalchemy error
+    # flask_sqlalchemy 오류를 방지하기 위해 애플리케이션 컨텍스트 생성
     with app.app_context():
         all_data = reserv.query.all()
         for data in all_data:
@@ -88,7 +88,6 @@ def start_schedule():
 
     scheduler.add_job(delete_all_data, 'cron', hour=22, minute=58) # 시간 지정 삭제
 
-    # 스케줄러 시작하기
     scheduler.start()
 
 # 스케줄러 시작하기
