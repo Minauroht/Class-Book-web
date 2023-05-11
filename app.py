@@ -81,7 +81,7 @@ def delete_all_data():
         for data in all_data:
             db.session.delete(data)
         db.session.commit()
-        print("오후 9시 30분 기점 리셋")
+        print("9:30 p.m. base reset")
 
 def start_schedule():
     scheduler = BackgroundScheduler()
