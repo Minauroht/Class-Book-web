@@ -31,18 +31,19 @@
       <div class="container">
         <ul>
           <!--DB 구성-->
-          <h1>
+          <h1 style="font-size: 15px;"> <!-- 폰트 크기 조절 -->
             {% for reserv in bookings %}
           <li>
-            <h2>학번/이름: {{ reserv.name }}</h2>
-            <p>장소: {{ reserv.room }}</p>
-            <p>시간: {{ reserv.time }}</p>
-            <p>단체명: {{ reserv.group }}</p>
-            <p>용무: {{ reserv.work }}</p>
-            <p>예약 일시: {{ reserv.date.strftime('%Y-%m-%d %H:%M:%S')  }}</p>
+            <h2 style="font-size: 24px;">학번/이름: {{ reserv.name }}</h2>
+            <p style="font-size: 18px;">장소: {{ reserv.room }}</p>
+            <p style="font-size: 18px;">시간: {{ reserv.time }}</p>
+            <p style="font-size: 18px;">단체명: {{ reserv.group }}</p>
+            <p style="font-size: 18px;">용무: {{ reserv.work }}</p>
+            <p style="font-size: 20px;">예약 일시: {{ reserv.date.strftime('%Y-%m-%d %H:%M:%S')  }}</p>
+            <p> ---------------------------------------------------------------------------------- </p>
           </li>
             {% endfor %}
-          </h1>
+        </h1>
         </ul>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

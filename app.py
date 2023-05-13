@@ -71,8 +71,8 @@ def checking():
 @app.before_first_request
 def create_database():
     db.create_all()
-    for data in reserv.query.all():
-            db.session.delete(data) #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
+    # for data in reserv.query.all():
+    #         db.session.delete(data) #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
     db.session.commit()
     
 def delete_all_data():
