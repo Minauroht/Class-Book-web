@@ -6,7 +6,7 @@ import sqlite3
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from apscheduler.schedulers.background import BackgroundScheduler
-from datetime import datetime
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
@@ -71,7 +71,8 @@ def checking():
 @app.before_first_request
 def create_database():
     db.create_all()
-    #db.session.query(reserv).delete() #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
+    for data in reserv.query.all():
+            db.session.delete(data) #<--이거 켜면 데이터 다 날아감. 주석 취소할 때 주의할 것.
     db.session.commit()
     
 def delete_all_data():

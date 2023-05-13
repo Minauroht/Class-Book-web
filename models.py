@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 db = SQLAlchemy()
@@ -23,7 +23,7 @@ class reserv(db.Model):
     time = db.Column(db.String(50), nullable=False)
     group = db.Column(db.String(120), nullable=False)
     work = db.Column(db.String(120), nullable=False)
-    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    date = db.Column(db.DateTime, nullable=False, default=lambda: datetime.utcnow() + timedelta(hours=9))
 
 @app.before_first_request
 def create_database():
