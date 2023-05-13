@@ -13,60 +13,60 @@ app = Flask(__name__)
 # 현재있는 파일의 디렉토리 절대경로
 basdir = os.path.abspath(os.path.dirname(__file__))
 # basdir 경로안에 DB파일 만들기
-dbfile = os.path.join(basdir, 'db.sqlite')
+dbfile = os.path.join(basdir, "db.sqlite")
 
 # SQLAlchemy 설정
 
 # 내가 사용 할 DB URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///booking.db'
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///booking.db"
 # 비지니스 로직이 끝날때 Commit 실행(DB반영)
-app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+app.config["SQLALCHEMY_COMMIT_ON_TEARDOWN"] = True
 # 수정사항에 대한 TRACK
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 # SECRET_KEY
-app.config['SECRET_KEY'] = 'jqiowejrojzxcovnklqnweiorjqwoijroi'
-app.config['JSON_AS_ASCII'] = False
-engine = create_engine('sqlite:///bookdata.db')
+app.config["SECRET_KEY"] = "jqiowejrojzxcovnklqnweiorjqwoijroi"
+app.config["JSON_AS_ASCII"] = False
+engine = create_engine("sqlite:///bookdata.db")
 Session = sessionmaker(bind=engine)
 session = Session()
 db.init_app(app)
 db.app = app
 
 bookings=[]
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
-@app.route('/main')
+@app.route("/main")
 def homemain():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/booking', methods=['GET', 'POST'])
+@app.route("/booking", methods=["GET", "POST"])
 def booking():
-    if request.method == 'POST':
+    if request.method == "POST":
         # 양식 데이터 가져오기
-        name = request.form['name']
-        room = request.form['room']
-        time = request.form['time']
-        group = request.form['group']
-        work = request.form['work']
+        name = request.form["name"]
+        room = request.form["room"]
+        time = request.form["time"]
+        group = request.form["group"]
+        work = request.form["work"]
 
         booking = reserv(name=name, room=room, time=time, group=group, work=work)
 
         db.session.add(booking)
         db.session.commit()
-        bookings.append({'name': name, 'room': room, 'time': time, 'group': group, 'work': work})
-        return redirect(url_for('checking'))
-    return render_template('booking.html')
+        bookings.append({"name": name, "room": room, "time": time, "group": group, "work": work})
+        return redirect(url_for("checking"))
+    return render_template("booking.html")
 
 
-@app.route('/checking', methods=['GET', 'POST'])
+@app.route("/checking", methods=["GET", "POST"])
 def checking():
     # 데이터베이스에서 모든 리뷰 검색
-    bookings = reserv.query.all()
+    bookings = reserv.query.order_by(reserv.date.desc()).all()
     # 리뷰 데이터로 리뷰 목록 템플릿 렌더링
-    return render_template('checking.html', bookings=bookings)
+    return render_template("checking.html", bookings=bookings)
 
 @app.before_first_request
 def create_database():
@@ -86,7 +86,7 @@ def delete_all_data():
 def start_schedule():
     scheduler = BackgroundScheduler()
 
-    scheduler.add_job(delete_all_data, 'cron', hour=21, minute=30) # 시간 지정 삭제
+    scheduler.add_job(delete_all_data, "cron", hour=21, minute=30) # 시간 지정 삭제
 
     scheduler.start()
 
@@ -95,4 +95,4 @@ start_schedule()
 
 
 if __name__ == "__main__":
-    app.run(port=0, host='0.0.0.0', debug=True)
+    app.run(port=0, host="0.0.0.0", debug=True)

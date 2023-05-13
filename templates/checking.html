@@ -39,7 +39,7 @@
             <p>시간: {{ reserv.time }}</p>
             <p>단체명: {{ reserv.group }}</p>
             <p>용무: {{ reserv.work }}</p>
-            <p>작성 시간: {{ reserv.date }}</p>
+            <p>작성 시간: {{ reserv.date.strftime('%Y-%m-%d %H:%M:%S')  }}</p>
           </li>
             {% endfor %}
           </h1>
