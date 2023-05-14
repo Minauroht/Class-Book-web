@@ -35,23 +35,31 @@
           <input type="text" class="form-control" id="name" name="name" placeholder="10203/최오량">
         </div>
         <div class="form-group">
-          <label for="room">예약실</label>
-          <select class="form-control" id="room", name="room">
-            <option>멀티1실</option>
-            <option>멀티2실</option>
-            <option>멀티3실</option>
-            <option>멀티4실</option>
-          </select>
+          <label>예약실</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="room1" name="room" value="1">
+            <label class="form-check-label" for="room1">멀티1실</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="room2" name="room" value="2">
+            <label class="form-check-label" for="room2">멀티2실</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="room3" name="room" value="3">
+            <label class="form-check-label" for="room3">멀티3실</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="room4" name="room" value="4">
+            <label class="form-check-label" for="room4">멀티4실</label>
+          </div>
         </div>
         <div class="form-group">
-          <label for="time">예약시간</label>
-          <select class="form-control" id="time", name="time">
-            <option>중식 시간</option>
-            <option>석식 시간</option>
-            <option>야간 자율 학습 시간 1차시</option>
-            <option>야간 자율 학습 시간 2차시</option>
-            <option>야간 자율 학습 시간 1,2차시</option>
-          </select>
+          <label for="start-time">예약시간 시작</label>
+          <input type="time" class="form-control" id="start-time" name="start-time">
+        </div>
+        <div class="form-group">
+          <label for="end-time">예약시간 끝</label>
+          <input type="time" class="form-control" id="end-time" name="end-time">
         </div>
         <div class="form-group">
           <label for="group">예약 단체명</label>
@@ -64,11 +72,6 @@
         </div>
         <input class="btn btn-primary" type="submit" value="제출">
       </form>
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
   </body>
