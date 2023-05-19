@@ -69,8 +69,8 @@ def checking():
 @app.before_first_request
 def create_database():
     db.create_all()
-    for data in reserv.query.all():
-         db.session.delete(data)
+    # for data in reserv.query.all():
+    #      db.session.delete(data)
     db.session.commit()
 
 
