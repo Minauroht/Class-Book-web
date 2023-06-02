@@ -54,40 +54,43 @@
           </ul>
         </div>
       </nav>
-    
+
       <br>
 
-    <div class="container">
-      <button class="btn btn-primary" type="submit">멀티실</button>
-      <a class="btn btn-outline-primary" href="JaJuHak.html" role="button">자기주도학습실</a>
-      <div class="table-wrapper table-responsive"> <!-- 이 부분을 추가하여 반응형 디자인으로 표를 적용 -->
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>예약자</th>
-              <th>예약 멀티실</th>
-              <th>시간</th>
-              <th>단체 이름</th>
-              <th>용무</th>
-              <th>예약 일시</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for reserv in bookings %}
-            <tr>
-              <td>{{ reserv.name }}</td>
-              <td>{{ reserv.room }}실</td>
-              <td>{{ reserv.time }}</td>
-              <td>{{ reserv.group }}</td>
-              <td>{{ reserv.work }}</td>
-              <td>{{ reserv.date.strftime('%m-%d %H:%M:%S')}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
 
+    <div class="container">
+      <a class="btn btn-outline-primary" href="checking.html" role="button">멀티실</a>
+      <a class="btn btn-primary" href="JaJuHak.html" role="button">자기주도학습실</a>
+     
+      <br>
+
+      <div class="table-wrapper table-responsive"> <!-- 이 부분을 추가하여 반응형 디자인으로 표를 적용 -->
+
+
+        <br>
+        <!-- 이거 눌렀을 때 각각 예약한거 상세페이지로 가게 만들어주면 될듯 -->
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              자주학1실
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              자주학2실
+              <span class="badge badge-primary badge-pill">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              자주학3실
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                자주학4실
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                자주학5실
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+          </ul>
 
     <script>
 

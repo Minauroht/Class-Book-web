@@ -66,6 +66,12 @@ def checking():
     return render_template("checking.html", bookings=bookings)
 
 
+# dlrj
+def number():
+    numbers = range(1, 5)  # 1부터 4까지의 숫자 범위 생성
+    return render_template('checking.html', numbers=numbers)
+
+
 @app.before_first_request
 def create_database():
     db.create_all()
@@ -95,3 +101,5 @@ start_schedule()
 
 if __name__ == "__main__":
     app.run(port=0, host="0.0.0.0", debug=True)
+
+
