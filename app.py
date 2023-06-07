@@ -65,6 +65,10 @@ def checking():
     bookings = reserv.query.order_by(reserv.date.desc()).all()
     return render_template("checking.html", bookings=bookings)
 
+@app.route("/JaJuHak", methods=["GET", "POST"])
+def JaJuHak():
+    bookings = reserv.query.order_by(reserv.date.desc()).all()
+    return render_template("JaJuHak.html", bookings=bookings)
 
 # dlrj
 def number():
