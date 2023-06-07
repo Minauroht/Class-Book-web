@@ -41,17 +41,19 @@
           <input type="text" class="form-control" id="name" name="name" placeholder="10203/최오량">
         </div>
         <div class="form-group">
-          <label>예약실</label><br>
-          <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">
+          <label>예약실 선택</label><br>
+          <div>
+          <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#selectJJH">
             예약실 선택
           </button>
+          <br>
         </div>
         <div class="form-group">
-          <label for="start-time">예약시간 시작</label>
+          <label for="start-time">예약시작 시간</label>
           <input type="time" class="form-control" id="start-time" name="start-time">
         </div>
         <div class="form-group">
-          <label for="end-time">예약시간 끝</label>
+          <label for="end-time">예약종료 시간</label>
           <input type="time" class="form-control" id="end-time" name="end-time">
         </div>
         <div class="form-group">
@@ -63,12 +65,12 @@
           <input type="text" class="form-control" id="work" name="work" placeholder="멘토링, 동아리 회의, 면접, etc...">
           <small id="book-form-small">사유는 간단하게 한줄로 적어주세요</small>
         </div>
-        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="submit" class="btn btn-primary">
             제출
         </button>
 
           <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade" id="selectJJH" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -80,14 +82,222 @@
             <div class="modal-body">
               예약하고 싶은 자주학실을 선택해주세요
             </div>
+            <div class="container">
+              <ul class="list-group">
+                <li class="list-group-item">
+
+                  <div class="collapse" id="navbarToggleExternalContent1">
+                    <div class="bg-white p-4">
+                      <h5 class="text-dark h4">원하시는 테이블에 체크해주세요</h5>
+                      <div class="form-group">
+                        <label>예약실</label><br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="room1-1" name="room" value="1-1">
+                          <label class="form-check-label" for="room1">1번 테이블</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="room1-2" name="room" value="1-2">
+                          <label class="form-check-label" for="room2">2번 테이블</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="room1-3" name="room" value="1-3">
+                          <label class="form-check-label" for="room3">3번 테이블</label>
+                        </div>
+                        <br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="room1-4" name="room" value="1-4">
+                          <label class="form-check-label" for="room4">4번 테이블</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="room1-5" name="room" value="1-5">
+                          <label class="form-check-label" for="room4">5번 테이블</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="room1-6" name="room" value="1-6">
+                          <label class="form-check-label" for="room4">6번 테이블</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent1" aria-expanded="false" aria-label="Toggle navigation">
+                      자주학 1실
+                    </button>
+                </li>
+
+                <li class="list-group-item">
+                <div class="collapse" id="navbarToggleExternalContent2">
+                  <div class="bg-white p-4">
+                    <h5 class="text-dark h4">원하시는 테이블에 체크해주세요</h5>
+                    <div class="form-group">
+                      <label>예약실</label><br>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room2-1" name="room" value="2-1">
+                        <label class="form-check-label" for="room1">1번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room2-2" name="room" value="2-2">
+                        <label class="form-check-label" for="room2">2번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room2-3" name="room" value="2-3">
+                        <label class="form-check-label" for="room3">3번 테이블</label>
+                      </div>
+                      <br>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room2-4" name="room" value="2-4">
+                        <label class="form-check-label" for="room4">4번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room2-5" name="room" value="2-5">
+                        <label class="form-check-label" for="room4">5번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room2-6" name="room" value="2-6">
+                        <label class="form-check-label" for="room4">6번 테이블</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent2" aria-controls="navbarToggleExternalContent2" aria-expanded="false" aria-label="Toggle navigation">
+                    자주학 2실
+                  </button>
+                </li>
+
+
+
+                <li class="list-group-item">
+                <div class="collapse" id="navbarToggleExternalContent3">
+                  <div class="bg-white p-4">
+                    <h5 class="text-dark h4">원하시는 테이블에 체크해주세요</h5>
+                    <div class="form-group">
+                      <label>예약실</label><br>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room3-1" name="room" value="3-1">
+                        <label class="form-check-label" for="room1">1번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room3-2" name="room" value="3-2">
+                        <label class="form-check-label" for="room2">2번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room3-3" name="room" value="3-3">
+                        <label class="form-check-label" for="room3">3번 테이블</label>
+                      </div>
+                      <br>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room3-4" name="room" value="3-4">
+                        <label class="form-check-label" for="room4">4번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room3-5" name="room" value="3-5">
+                        <label class="form-check-label" for="room4">5번 테이블</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="room3-6" name="room" value="3-6">
+                        <label class="form-check-label" for="room4">6번 테이블</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                          
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3" aria-expanded="false" aria-label="Toggle navigation">
+                    자주학 3실
+                  </button>
+                </li>
+
+                  <li class="list-group-item">
+                    <div class="collapse" id="navbarToggleExternalContent4">
+                      <div class="bg-white p-4">
+                        <h5 class="text-dark h4">원하시는 테이블에 체크해주세요</h5>
+                        <div class="form-group">
+                          <label>예약실</label><br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room4-1" name="room" value="4-1">
+                            <label class="form-check-label" for="room1">1번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room4-2" name="room" value="4-2">
+                            <label class="form-check-label" for="room2">2번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room4-3" name="room" value="4-3">
+                            <label class="form-check-label" for="room3">3번 테이블</label>
+                          </div>
+                          <br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room4-4" name="room" value="4-4">
+                            <label class="form-check-label" for="room4">4번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room4-5" name="room" value="4-5">
+                            <label class="form-check-label" for="room4">5번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room4-6" name="room" value="4-6">
+                            <label class="form-check-label" for="room4">6번 테이블</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent4" aria-controls="navbarToggleExternalContent4" aria-expanded="false" aria-label="Toggle navigation">
+                    자주학 4실
+                  </button>
+                </li>
+
+                  <li class="list-group-item">
+                    <div class="collapse" id="navbarToggleExternalContent5">
+                      <div class="bg-white p-4">
+                        <h5 class="text-dark h4">원하시는 테이블에 체크해주세요</h5>
+                        <div class="form-group">
+                          <label>예약실</label><br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room5-1" name="room" value="5-1">
+                            <label class="form-check-label" for="room1">1번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room5-2" name="room" value="5-2">
+                            <label class="form-check-label" for="room2">2번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room5-3" name="room" value="5-3">
+                            <label class="form-check-label" for="room3">3번 테이블</label>
+                          </div>
+                          <br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room5-4" name="room" value="5-4">
+                            <label class="form-check-label" for="room4">4번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room5-5" name="room" value="5-5">
+                            <label class="form-check-label" for="room4">5번 테이블</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="room5-6" name="room" value="5-6">
+                            <label class="form-check-label" for="room4">6번 테이블</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent5" aria-controls="navbarToggleExternalContent5" aria-expanded="false" aria-label="Toggle navigation">
+                    자주학 5실
+                  </button>
+                </li>
+
+
+              </ul>
+           </div>
+           <br>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-              <button type="button" class="btn btn-primary">Understood</button>
             </div>
           </div>
         </div>
       </div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
