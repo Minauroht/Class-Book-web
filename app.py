@@ -59,6 +59,27 @@ def booking():
         return redirect(url_for("checking"))
     return render_template("booking.html")
 
+# @app.route("/JJHbooking", methods=["GET", "POST"]) #자주학 예약 페이지용 템플릿
+# def booking():
+    # if request.method == "POST":
+    #     # 양식 데이터 가져오기
+    #     name = request.form["name"]
+    #     # 가져온 체크박스 데이터 문자열에 저장 (변경)
+    #     room = ', '.join(request.form.getlist("room"))
+    #     # 시작 및 종료 시간 추가 (변경)
+    #     start_time = request.form["start-time"]
+    #     end_time = request.form["end-time"]
+    #     time = f"{start_time}-{end_time}"
+    #     group = request.form["group"]
+    #     work = request.form["work"]
+
+    #     booking = reserv(name=name, room=room, time=time, group=group, work=work)
+
+    #     db.session.add(booking)
+    #     db.session.commit()
+    #     bookings.append({"name": name, "room": room, "time": time, "group": group, "work": work})
+    #     return redirect(url_for("JaJuHak"))
+    # return render_template("JJHbooking.html")
 
 @app.route("/checking", methods=["GET", "POST"])
 def checking():
