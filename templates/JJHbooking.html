@@ -34,11 +34,11 @@
         <a class="btn btn-primary" href="JJHbooking" role="button">자주학실 예약하기</a>
 
       <!-- 예약form -->
-      <form class="container" action="{{ url_for('booking') }}" method="post" >
+      <form class="container" action="{{ url_for('JJHbooking') }}" method="post" >
         <br>
         <div class="form-group">
-          <label for="name">대표자 학번/이름</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="10203/최오량">
+          <label for="jname">대표자 학번/이름</label>
+          <input type="text" class="form-control" id="jname" name="jname" placeholder="10203/최오량">
         </div>
         <div class="form-group">
           <label>예약실 선택</label><br>
@@ -49,20 +49,20 @@
           <br>
         </div>
         <div class="form-group">
-          <label for="start-time">예약시작 시간</label>
-          <input type="time" class="form-control" id="start-time" name="start-time">
+          <label for="jstart-time">예약시작 시간</label>
+          <input type="time" class="form-control" id="jstart-time" name="jstart-time">
         </div>
         <div class="form-group">
-          <label for="end-time">예약종료 시간</label>
-          <input type="time" class="form-control" id="end-time" name="end-time">
+          <label for="jend-time">예약종료 시간</label>
+          <input type="time" class="form-control" id="jend-time" name="jend-time">
         </div>
         <div class="form-group">
-          <label for="group">예약 단체명</label>
-          <input type="text" class="form-control" id="group" name="group" placeholder="SCIVILL, 2-4반, etc..">
+          <label for="jgroup">예약 단체명</label>
+          <input type="text" class="form-control" id="jgroup" name="jgroup" placeholder="SCIVILL, 2-4반, etc..">
         </div>
         <div class="form-group">
-          <label for="work">예약 사유</label>
-          <input type="text" class="form-control" id="work" name="work" placeholder="멘토링, 동아리 회의, 면접, etc...">
+          <label for="jwork">예약 사유</label>
+          <input type="text" class="form-control" id="jwork" name="jwork" placeholder="멘토링, 동아리 회의, 면접, etc...">
           <small id="book-form-small">사유는 간단하게 한줄로 적어주세요</small>
         </div>
         <button type="submit" class="btn btn-primary">
@@ -92,28 +92,28 @@
                       <div class="form-group">
                         <label>예약실</label><br>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="room1-1" name="room" value="1-1">
+                          <input class="form-check-input" type="radio" id="room1-1" name="jroom" value="1-1">
                           <label class="form-check-label" for="room1">1번 테이블</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="room1-2" name="room" value="1-2">
+                          <input class="form-check-input" type="radio" id="room1-2" name="jroom" value="1-2">
                           <label class="form-check-label" for="room2">2번 테이블</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="room1-3" name="room" value="1-3">
+                          <input class="form-check-input" type="radio" id="room1-3" name="jroom" value="1-3">
                           <label class="form-check-label" for="room3">3번 테이블</label>
                         </div>
                         <br>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="room1-4" name="room" value="1-4">
+                          <input class="form-check-input" type="radio" id="room1-4" name="jroom" value="1-4">
                           <label class="form-check-label" for="room4">4번 테이블</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="room1-5" name="room" value="1-5">
+                          <input class="form-check-input" type="radio" id="room1-5" name="jroom" value="1-5">
                           <label class="form-check-label" for="room4">5번 테이블</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="room1-6" name="room" value="1-6">
+                          <input class="form-check-input" type="radio" id="room1-6" name="jroom" value="1-6">
                           <label class="form-check-label" for="room4">6번 테이블</label>
                         </div>
                       </div>
@@ -132,28 +132,28 @@
                     <div class="form-group">
                       <label>예약실</label><br>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room2-1" name="room" value="2-1">
+                        <input class="form-check-input" type="radio" id="room2-1" name="jroom" value="2-1">
                         <label class="form-check-label" for="room1">1번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room2-2" name="room" value="2-2">
+                        <input class="form-check-input" type="radio" id="room2-2" name="jroom" value="2-2">
                         <label class="form-check-label" for="room2">2번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room2-3" name="room" value="2-3">
+                        <input class="form-check-input" type="radio" id="room2-3" name="jroom" value="2-3">
                         <label class="form-check-label" for="room3">3번 테이블</label>
                       </div>
                       <br>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room2-4" name="room" value="2-4">
+                        <input class="form-check-input" type="radio" id="room2-4" name="jroom" value="2-4">
                         <label class="form-check-label" for="room4">4번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room2-5" name="room" value="2-5">
+                        <input class="form-check-input" type="radio" id="room2-5" name="jroom" value="2-5">
                         <label class="form-check-label" for="room4">5번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room2-6" name="room" value="2-6">
+                        <input class="form-check-input" type="radio" id="room2-6" name="jroom" value="2-6">
                         <label class="form-check-label" for="room4">6번 테이블</label>
                       </div>
                     </div>
@@ -175,28 +175,28 @@
                     <div class="form-group">
                       <label>예약실</label><br>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room3-1" name="room" value="3-1">
+                        <input class="form-check-input" type="radio" id="room3-1" name="jroom" value="3-1">
                         <label class="form-check-label" for="room1">1번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room3-2" name="room" value="3-2">
+                        <input class="form-check-input" type="radio" id="room3-2" name="jroom" value="3-2">
                         <label class="form-check-label" for="room2">2번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room3-3" name="room" value="3-3">
+                        <input class="form-check-input" type="radio" id="room3-3" name="jroom" value="3-3">
                         <label class="form-check-label" for="room3">3번 테이블</label>
                       </div>
                       <br>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room3-4" name="room" value="3-4">
+                        <input class="form-check-input" type="radio" id="room3-4" name="jroom" value="3-4">
                         <label class="form-check-label" for="room4">4번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room3-5" name="room" value="3-5">
+                        <input class="form-check-input" type="radio" id="room3-5" name="jroom" value="3-5">
                         <label class="form-check-label" for="room4">5번 테이블</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="room3-6" name="room" value="3-6">
+                        <input class="form-check-input" type="radio" id="room3-6" name="jroom" value="3-6">
                         <label class="form-check-label" for="room4">6번 테이블</label>
                       </div>
                     </div>
@@ -215,28 +215,28 @@
                         <div class="form-group">
                           <label>예약실</label><br>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room4-1" name="room" value="4-1">
+                            <input class="form-check-input" type="radio" id="room4-1" name="jroom" value="4-1">
                             <label class="form-check-label" for="room1">1번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room4-2" name="room" value="4-2">
+                            <input class="form-check-input" type="radio" id="room4-2" name="jroom" value="4-2">
                             <label class="form-check-label" for="room2">2번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room4-3" name="room" value="4-3">
+                            <input class="form-check-input" type="radio" id="room4-3" name="jroom" value="4-3">
                             <label class="form-check-label" for="room3">3번 테이블</label>
                           </div>
                           <br>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room4-4" name="room" value="4-4">
+                            <input class="form-check-input" type="radio" id="room4-4" name="jroom" value="4-4">
                             <label class="form-check-label" for="room4">4번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room4-5" name="room" value="4-5">
+                            <input class="form-check-input" type="radio" id="room4-5" name="jroom" value="4-5">
                             <label class="form-check-label" for="room4">5번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room4-6" name="room" value="4-6">
+                            <input class="form-check-input" type="radio" id="room4-6" name="jroom" value="4-6">
                             <label class="form-check-label" for="room4">6번 테이블</label>
                           </div>
                         </div>
@@ -255,28 +255,28 @@
                         <div class="form-group">
                           <label>예약실</label><br>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room5-1" name="room" value="5-1">
+                            <input class="form-check-input" type="radio" id="room5-1" name="jroom" value="5-1">
                             <label class="form-check-label" for="room1">1번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room5-2" name="room" value="5-2">
+                            <input class="form-check-input" type="radio" id="room5-2" name="jroom" value="5-2">
                             <label class="form-check-label" for="room2">2번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room5-3" name="room" value="5-3">
+                            <input class="form-check-input" type="radio" id="room5-3" name="jroom" value="5-3">
                             <label class="form-check-label" for="room3">3번 테이블</label>
                           </div>
                           <br>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room5-4" name="room" value="5-4">
+                            <input class="form-check-input" type="radio" id="room5-4" name="jroom" value="5-4">
                             <label class="form-check-label" for="room4">4번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room5-5" name="room" value="5-5">
+                            <input class="form-check-input" type="radio" id="room5-5" name="jroom" value="5-5">
                             <label class="form-check-label" for="room4">5번 테이블</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="room5-6" name="room" value="5-6">
+                            <input class="form-check-input" type="radio" id="room5-6" name="jroom" value="5-6">
                             <label class="form-check-label" for="room4">6번 테이블</label>
                           </div>
                         </div>
@@ -298,7 +298,6 @@
           </div>
         </div>
       </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

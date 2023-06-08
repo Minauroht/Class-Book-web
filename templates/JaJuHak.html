@@ -64,9 +64,7 @@
   
       <br>
 
-      <div class="table-wrapper table-responsive"> <!-- 이 부분을 추가하여 반응형 디자인으로 표를 적용 -->
-
-
+      <div class="table-wrapper table-responsive">
         <br>
         <!-- 이거 눌렀을 때 각각 예약한거 상세페이지로 가게 만들어주면 될듯 -->
         <ul class="list-group">
@@ -91,6 +89,32 @@
                 <span class="badge badge-primary badge-pill">1</span>
               </li>
           </ul>
+          <div class="table-wrapper table-responsive"> <!--일단 임시로 적용한 것-->
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>예약자</th>
+                  <th>예약 자주학실</th>
+                  <th>시간</th>
+                  <th>단체 이름</th>
+                  <th>용무</th>
+                  <th>예약 일시</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for JJH in jbookings %}
+                <tr>
+                  <td>{{ JJH.jname }}</td>
+                  <td>{{ JJH.jroom }}실</td>
+                  <td>{{ JJH.jtime }}</td>
+                  <td>{{ JJH.jgroup }}</td>
+                  <td>{{ JJH.jwork }}</td>
+                  <td>{{ JJH.jdate.strftime('%m-%d %H:%M:%S')}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
 
     <script>
 

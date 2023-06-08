@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import os
-from models import db, reserv
+from models import db, reserv, JJH
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 from sqlalchemy import create_engine
@@ -25,21 +25,15 @@ db.init_app(app)
 db.app = app
 
 bookings = []
-
+jbookings = []
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
-
 @app.route("/main")
 def homemain():
     return render_template("index.html")
-
-@app.route("/JJHbooking")
-def JJHbooking():
-    return render_template("JJHbooking.html")
-
 
 @app.route("/booking", methods=["GET", "POST"])
 def booking():
@@ -63,27 +57,27 @@ def booking():
         return redirect(url_for("checking"))
     return render_template("booking.html")
 
-# @app.route("/JJHbooking", methods=["GET", "POST"]) #자주학 예약 페이지용 템플릿
-# def JJHbooking():
-#     if request.method == "POST":
-#         # 양식 데이터 가져오기
-#         name = request.form["name"]
-#         # 가져온 체크박스 데이터 문자열에 저장 (변경)
-#         room = ', '.join(request.form.getlist("room"))
-#         # 시작 및 종료 시간 추가 (변경)
-#         start_time = request.form["start-time"]
-#         end_time = request.form["end-time"]
-#         time = f"{start_time}-{end_time}"
-#         group = request.form["group"]
-#         work = request.form["work"]
+@app.route("/JJHbooking", methods=["GET", "POST"]) #자주학 예약 페이지용 템플릿
+def JJHbooking():
+    if request.method == "POST":
+        # 양식 데이터 가져오기
+        jname = request.form["jname"]
+        # 가져온 체크박스 데이터 문자열에 저장 (변경)
+        jroom = ', '.join(request.form.getlist("jroom"))
+        # 시작 및 종료 시간 추가 (변경)
+        jstart_time = request.form["jstart-time"]
+        jend_time = request.form["jend-time"]
+        jtime = f"{jstart_time}-{jend_time}"
+        jgroup = request.form["jgroup"]
+        jwork = request.form["jwork"]
 
-#         booking = reserv(name=name, room=room, time=time, group=group, work=work)
+        jbooking = JJH(jname=jname, jroom=jroom, jtime=jtime, jgroup=jgroup, jwork=jwork)
 
-#         db.session.add(booking)
-#         db.session.commit()
-#         bookings.append({"name": name, "room": room, "time": time, "group": group, "work": work})
-#         return redirect(url_for("JaJuHak"))
-#     return render_template("JJHbooking.html")
+        db.session.add(jbooking)
+        db.session.commit()
+        jbookings.append({"jname": jname, "jroom": jroom, "jtime": jtime, "jgroup": jgroup, "jwork": jwork})
+        return redirect(url_for("JaJuHak"))
+    return render_template("JJHbooking.html")
 
 @app.route("/checking", methods=["GET", "POST"])
 def checking():
@@ -92,8 +86,8 @@ def checking():
 
 @app.route("/JaJuHak", methods=["GET", "POST"])
 def JaJuHak():
-    bookings = reserv.query.order_by(reserv.date.desc()).all()
-    return render_template("JaJuHak.html", bookings=bookings)
+    jbookings = JJH.query.order_by(JJH.jdate.desc()).all()
+    return render_template("JaJuHak.html", jbookings=jbookings)
 
 # dlrj
 def number():
@@ -111,7 +105,7 @@ def create_database():
 
 def delete_all_data():
     with app.app_context():
-        all_data = reserv.query.all()
+        all_data = reserv.query.all(), JJH.query.all()
         for data in all_data:
             db.session.delete(data)
         db.session.commit()
