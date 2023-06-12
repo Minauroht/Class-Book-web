@@ -25,16 +25,16 @@ class reserv(db.Model):
     work = db.Column(db.String(120), nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=lambda: datetime.utcnow() + timedelta(hours=9))
 
-# class JJH(db.Model): 자주학 DB 샘플
-#     __tablename__ = "JJHreserv"
+class JJH(db.Model):
+    __tablename__ = "JJH"
 
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(120), nullable=False)
-#     room = db.Column(db.String(50), nullable=False)
-#     time = db.Column(db.String(50), nullable=False)
-#     group = db.Column(db.String(120), nullable=False)
-#     work = db.Column(db.String(120), nullable=False)
-#     date = db.Column(db.DateTime, nullable=False, default=lambda: datetime.utcnow() + timedelta(hours=9))
+    id = db.Column(db.Integer, primary_key=True)
+    jname = db.Column(db.String(120), nullable=False)
+    jroom = db.Column(db.String(50), nullable=False)
+    jtime = db.Column(db.String(50), nullable=False)
+    jgroup = db.Column(db.String(120), nullable=False)
+    jwork = db.Column(db.String(120), nullable=False)
+    jdate = db.Column(db.DateTime, nullable=False, default=lambda: datetime.utcnow() + timedelta(hours=9))
 
 @app.before_first_request
 def create_database():
