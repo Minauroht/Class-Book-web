@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="booking">시설 예약</a>
+              <a class="nav-link" href="JJHbooking">시설 예약</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="checking">예약 확인</a>
@@ -92,7 +92,9 @@
                       {% for JJH in jbookings %}
                       <tr>
                         {% if JJH.jroom == '1-1' %}
-                        <td>{{ JJH.jname }} <br> {{ JJH.jtime }} </td>
+                        <td>{{ JJH.jname }} 
+                          <br> 
+                          {{ JJH.jtime }} </td>
                         {% else %}
                         </td><td>
                         {% endif %}
@@ -163,75 +165,54 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {% for JJH in jbookings %}
                       <tr>
-                        {% for JJH in jbookings %}
-                        {% if JJH.jroom == '2-1' %}
+                        {% if JJH.jroom == '12-1' %}
                         <td>{{ JJH.jname }} 
                           <br> 
-                          {{ JJH.jtime }}
-                        </td>
+                          {{ JJH.jtime }} </td>
                         {% else %}
-                        <td></td>
+                        </td><td>
                         {% endif %}
-                        {% endfor %}
-                      </tr>
-                      <tr>
-                        {% for JJH in jbookings %}
                         {% if JJH.jroom == '2-2' %}
-                        <td>{{ JJH.jname }} 
-                          <br> 
-                          {{ JJH.jtime }}
+                        <td> {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          <br>
+                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
                         </td>
                         {% else %}
-                        <td></td>
+                      </td><td>
                         {% endif %}
-                        {% endfor %}
-                      </tr>
-                      <tr>
-                        {% for JJH in jbookings %}
                         {% if JJH.jroom == '2-3' %}
-                        <td>{{ JJH.jname }} 
-                          <br> 
-                          {{ JJH.jtime }}
+                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          <br>
+                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
                         </td>
                         {% else %}
-                        <td></td>
+                      </td><td>
                         {% endif %}
-                        {% endfor %}
-                      </tr>
-                      <tr>
-                        {% for JJH in jbookings %}
                         {% if JJH.jroom == '2-4' %}
-                        <td>{{ JJH.jname }} 
-                          <br> 
-                          {{ JJH.jtime }}
+                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          <br>
+                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
                         </td>
                         {% else %}
-                        <td></td>
+                      </td><td>
                         {% endif %}
-                        {% endfor %}
-                      </tr>
-                      <tr>
-                        {% for JJH in jbookings %}
                         {% if JJH.jroom == '2-5' %}
-                        <td>{{ JJH.jname }} 
-                          <br> 
-                          {{ JJH.jtime }}
+                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          <br>
+                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
                         </td>
                         {% else %}
-                        <td></td>
+                      </td><td>
                         {% endif %}
-                        {% endfor %}
-                      </tr>
-                      <tr>
-                        {% for JJH in jbookings %}
                         {% if JJH.jroom == '2-6' %}
-                        <td>{{ JJH.jname }} 
-                          <br> 
-                          {{ JJH.jtime }}
+                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          <br>
+                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
                         </td>
                         {% else %}
-                        <td></td>
+                      </td><td>
                         {% endif %}
                         {% endfor %}
                       </tr>
@@ -414,18 +395,17 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {% for JJH in jbookings %}
                       <tr>
-                        {% for JJH in jbookings %}
-                        {% if JJH.jroom == '5-1' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                        <br>
-                        {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
+                        {% if JJH.jroom == '15-1' %}
+                        <td>{{ JJH.jname }} 
+                          <br> 
+                          {{ JJH.jtime }} </td>
                         {% else %}
-                      </td><td>
+                        </td><td>
                         {% endif %}
                         {% if JJH.jroom == '5-2' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                        <td> {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
                         </td>
@@ -463,9 +443,9 @@
                         </td>
                         {% else %}
                       </td><td>
+                        {% endif %}
+                        {% endfor %}
                       </tr>
-                      {% endif %}
-                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
