@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, timedelta
-
+#야범준 왔다감
 app = Flask(__name__)
 
 basdir = os.path.abspath(os.path.dirname(__file__))
