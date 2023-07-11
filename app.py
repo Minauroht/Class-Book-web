@@ -96,13 +96,20 @@ def number():
 
 
 @app.before_first_request
-def create_database():
+def purgeDB():
     db.create_all()
-    # for data in reserv.query.all():
-    #      db.session.delete(data)
+    reserv_data = reserv.query.all()
+    jjh_data = JJH.query.all()
+        
+    for data in reserv_data:
+        db.session.delete(data)
+       
+    for data in jjh_data:
+        db.session.delete(data)
+        
     db.session.commit()
 
-
+'''
 def delete_all_data():
     with app.app_context():
         all_data = reserv.query.all(), JJH.query.all()
@@ -121,6 +128,7 @@ def start_schedule():
 
 
 start_schedule()
+'''
 
 if __name__ == "__main__":
     app.run(port=0, host="0.0.0.0", debug=True)
