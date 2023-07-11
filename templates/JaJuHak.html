@@ -162,54 +162,49 @@
                     <tbody>
                       {% for JJH in jbookings %}
                       <tr>
-                        {% if JJH.jroom == '12-1' %}
-                        <td>{{ JJH.jname }} 
+                        <td>
+                          {% if JJH.jroom == '2-1' %}
+                          {{ JJH.jname }} 
                           <br> 
-                          {{ JJH.jtime }} </td>
-                        {% else %}
-                        </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '2-2' %}
-                        <td> {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {{ JJH.jtime }}
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '2-2' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '2-3' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '2-3' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '2-4' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '2-4' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '2-5' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '2-5' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '2-6' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '2-6' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% endfor %}
+                          {% endif %}
+                          </td>
+                          {% endfor %}
                       </tr>
                     </tbody>
                   </table>
@@ -234,58 +229,51 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {% for JJH in jbookings %}
                       <tr>
-                        {% for JJH in jbookings %}
-                        {% if JJH.jroom == '3-1' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                        <br>
-                        {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '3-2' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                        <td>
+                          {% if JJH.jroom == '3-1' %}
+                          {{ JJH.jname }} 
+                          <br> 
+                          {{ JJH.jtime }}
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '3-2' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '3-3' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '3-3' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '3-4' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '3-4' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '3-5' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '3-5' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '3-6' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '3-6' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                      </tr>
-                      {% endif %}
-                      {% endfor %}
+                          {% endif %}
+                          </td>
+                          {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -312,58 +300,51 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
                         {% for JJH in jbookings %}
-                        {% if JJH.jroom == '4-1' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                        <br>
-                        {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '4-2' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                          <br>
-                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '4-3' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                          <br>
-                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '4-4' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                          <br>
-                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '4-5' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                          <br>
-                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '4-6' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
-                          <br>
-                          {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                      </tr>
-                      {% endif %}
-                      {% endfor %}
+                        <tr>
+                          <td>
+                            {% if JJH.jroom == '4-1' %}
+                            {{ JJH.jname }} 
+                            <br> 
+                            {{ JJH.jtime }}
+                            {% endif %}
+                            </td>
+                            <td>
+                            {% if JJH.jroom == '4-2' %}
+                            {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                            <br>
+                            {{ JJH.jtime }} <!-- 시간은 여따가 -->
+                            {% endif %}
+                            </td>
+                            <td>
+                            {% if JJH.jroom == '4-3' %}
+                            {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                            <br>
+                            {{ JJH.jtime }} <!-- 시간은 여따가 -->
+                            {% endif %}
+                            </td>
+                            <td>
+                            {% if JJH.jroom == '4-4' %}
+                            {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                            <br>
+                            {{ JJH.jtime }} <!-- 시간은 여따가 -->
+                            {% endif %}
+                            </td>
+                            <td>
+                            {% if JJH.jroom == '4-5' %}
+                            {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                            <br>
+                            {{ JJH.jtime }} <!-- 시간은 여따가 -->
+                            {% endif %}
+                            </td>
+                            <td>
+                            {% if JJH.jroom == '4-6' %}
+                            {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                            <br>
+                            {{ JJH.jtime }} <!-- 시간은 여따가 -->
+                            {% endif %}
+                            </td>
+                            {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -392,54 +373,49 @@
                     <tbody>
                       {% for JJH in jbookings %}
                       <tr>
-                        {% if JJH.jroom == '5-1' %}
-                        <td>{{ JJH.jname }} 
+                        <td>
+                          {% if JJH.jroom == '1-1' %}
+                          {{ JJH.jname }} 
                           <br> 
-                          {{ JJH.jtime }} </td>
-                        {% else %}
-                        </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '5-2' %}
-                        <td> {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {{ JJH.jtime }}
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '5-2' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '5-3' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '5-3' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '5-4' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '5-4' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '5-5' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '5-5' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% if JJH.jroom == '5-6' %}
-                        <td>{{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
+                          {% endif %}
+                          </td>
+                          <td>
+                          {% if JJH.jroom == '5-6' %}
+                          {{ JJH.jname }} <!-- 이런식으로 하면 되지않을가??? -->
                           <br>
                           {{ JJH.jtime }} <!-- 시간은 여따가 -->
-                        </td>
-                        {% else %}
-                      </td><td>
-                        {% endif %}
-                        {% endfor %}
+                          {% endif %}
+                          </td>
+                          {% endfor %}
                       </tr>
                     </tbody>
                   </table>
