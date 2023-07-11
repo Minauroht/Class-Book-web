@@ -38,5 +38,5 @@ class JJH(db.Model):
 
 @app.before_first_request
 def create_database():
-     db.create_all(app=app)
-     db.session.commit()
+    db.create_all(app=app)
+    db.session.commit()
